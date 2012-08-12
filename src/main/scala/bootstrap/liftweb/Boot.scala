@@ -73,7 +73,8 @@ class Boot {
   /* How to make the following compile?
   */
     def sitemap = SiteMap(
-      Menu.i("Home") / "index" >> User.AddUserMenusAfter
+      Menu.i("Home") / "index" >> User.AddUserMenusAfter,
+      Menu.i("Random") / "random"
     )
     def sitemapMutators = User.sitemapMutator
     LiftRules.setSiteMapFunc(() => sitemapMutators(sitemap))
