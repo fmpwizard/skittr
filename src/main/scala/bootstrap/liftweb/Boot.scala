@@ -72,15 +72,15 @@ class Boot {
 
   /* How to make the following compile?
   */
-  def sitemap = SiteMap(
-      Menu.i("Home") / "index" >> User.AddUserMenusAfter,
-      User.menus
+    def sitemap = SiteMap(
+      Menu.i("Home") / "index" >> User.AddUserMenusAfter
     )
-  def sitemapMutators = User.sitemapMutator
-  LiftRules.setSiteMapFunc(() => sitemapMutators(sitemap))
+    def sitemapMutators = User.sitemapMutator
+    LiftRules.setSiteMapFunc(() => sitemapMutators(sitemap))
 
-  // load up the list of user actors
-  UserList.create
+
+    // load up the list of user actors
+    UserList.create
   }
 }
 
